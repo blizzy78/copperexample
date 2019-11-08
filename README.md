@@ -5,4 +5,4 @@ This is a simple, but fully working example for the [Copper] template rendering 
 
 
 
-[Copper]: github.com/blizzy78/copper
+[Copper]: https://github.com/blizzy78/copper
