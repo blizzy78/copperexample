@@ -1,5 +1,7 @@
 github.com/blizzy78/copper v0.0.0-20191108220950-4453ee929901 h1:emA/jeZTLqFR8E0N1eean0lWCDEILi+7TOG0BVBmXY4=
 github.com/blizzy78/copper v0.0.0-20191108220950-4453ee929901/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
+github.com/blizzy78/copper v0.0.0-20191124174752-60e4dfe16ea4 h1:o3H10nYrW8AQdnkzRVWGa0qXhx/5q55hTKodTXBTn9g=
+github.com/blizzy78/copper v0.0.0-20191124174752-60e4dfe16ea4/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-chi/chi v4.0.2+incompatible h1:maB6vn6FqCxrpz4FqWdh4+lwpyZIQS7YEAUcHlgXVRs=

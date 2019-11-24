@@ -25,7 +25,7 @@ func main() {
 		"requestID": middleware.RequestIDFromContext,
 	}
 
-	r := template.NewRenderer(loadTemplate, nil, scopeData, "t")
+	r := template.NewRenderer(loadTemplate, template.WithScopeData(scopeData))
 
 	nethttpexample.Run(r)
 	// gorillaexample.Run(r)
