@@ -6,6 +6,10 @@ github.com/blizzy78/copper v0.0.0-20191130022853-28962918f239 h1:CbPTnvs49VmE7az
 github.com/blizzy78/copper v0.0.0-20191130022853-28962918f239/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
 github.com/blizzy78/copper v0.0.0-20191130024225-f1c1ae628dcb h1:NbV97MgI0jBOTt0Gv83jaqFR41LaZXMyskiL2UNgy3s=
 github.com/blizzy78/copper v0.0.0-20191130024225-f1c1ae628dcb/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
+github.com/blizzy78/copper v0.0.0-20191201162229-d024b4f8bb04 h1:aDi/iz6Anrqj467ie+TGfJ8hOcFurDFRpQFK0GW7XQQ=
+github.com/blizzy78/copper v0.0.0-20191201162229-d024b4f8bb04/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
+github.com/blizzy78/copper v0.0.0-20191201164225-214342aec0ca h1:N4QED3nMHEKH4T4TFZrWz/bpamPoQws+jIaWM3qEhcM=
+github.com/blizzy78/copper v0.0.0-20191201164225-214342aec0ca/go.mod h1:OMOP1dodA5L1R8rkXE/4StVTnDZTqKPvD4BX61+6xOM=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-chi/chi v4.0.2+incompatible h1:maB6vn6FqCxrpz4FqWdh4+lwpyZIQS7YEAUcHlgXVRs=

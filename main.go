@@ -18,14 +18,11 @@ import (
 )
 
 func main() {
-	scopeData := map[string]interface{}{
-		"safe":      helpers.Safe,
-		"html":      helpers.HTML,
-		"has":       helpers.Has,
-		"requestID": middleware.RequestIDFromContext,
-	}
-
-	r := template.NewRenderer(loadTemplate, template.WithScopeData(scopeData))
+	r := template.NewRenderer(loadTemplate,
+		template.WithScopeData("safe", helpers.Safe),
+		template.WithScopeData("html", helpers.HTML),
+		template.WithScopeData("has", helpers.Has),
+		template.WithScopeData("requestID", middleware.RequestIDFromContext))
 
 	nethttpexample.Run(r)
 	// gorillaexample.Run(r)
