@@ -12,9 +12,7 @@ type requestIDMiddleware struct {
 
 type requestIDContextKey string
 
-const (
-	requestIDKey = requestIDContextKey("requestID")
-)
+const requestIDKey requestIDContextKey = "requestID"
 
 func NewRequestID(next http.Handler) http.Handler {
 	return &requestIDMiddleware{
