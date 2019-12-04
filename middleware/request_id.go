@@ -21,12 +21,19 @@ func NewRequestID(next http.Handler) http.Handler {
 }
 
 func (mw *requestIDMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	// generate some random fake ID
 	id := rand.Int()
 
-	ctx := r.Context()
-	ctx = context.WithValue(ctx, requestIDKey, id)
+	// put ID into request's context
+	ctx := withRequestID(r.Context(), id)
 	r = r.WithContext(ctx)
+
+	// call next handler
 	mw.next.ServeHTTP(w, r)
+}
+
+func withRequestID(ctx context.Context, id int) context.Context {
+	return context.WithValue(ctx, requestIDKey, id)
 }
 
 func RequestIDFromContext(ctx context.Context) int {
