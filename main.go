@@ -24,10 +24,10 @@ func main() {
 		template.WithScopeData("has", helpers.Has),
 		template.WithScopeData("requestID", middleware.RequestIDFromContext))
 
-	nethttpexample.Run(r)
-	// gorillaexample.Run(r)
 	// chiexample.Run(r)
+	// gorillaexample.Run(r)
 	// httprouterexample.Run(r)
+	nethttpexample.Run(r)
 }
 
 func loadTemplate(name string) (io.Reader, error) {

@@ -6,30 +6,22 @@ import (
 	"net/http"
 )
 
-type requestIDMiddleware struct {
-	next http.Handler
-}
-
 type requestIDContextKey string
 
 const requestIDKey requestIDContextKey = "requestID"
 
 func NewRequestID(next http.Handler) http.Handler {
-	return &requestIDMiddleware{
-		next: next,
-	}
-}
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// generate some random fake ID
+		id := rand.Int()
 
-func (mw *requestIDMiddleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// generate some random fake ID
-	id := rand.Int()
+		// put ID into request's context
+		ctx := withRequestID(r.Context(), id)
+		r = r.WithContext(ctx)
 
-	// put ID into request's context
-	ctx := withRequestID(r.Context(), id)
-	r = r.WithContext(ctx)
-
-	// call next handler
-	mw.next.ServeHTTP(w, r)
+		// call next handler
+		next.ServeHTTP(w, r)
+	})
 }
 
 func withRequestID(ctx context.Context, id int) context.Context {

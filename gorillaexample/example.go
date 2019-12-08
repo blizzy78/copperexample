@@ -15,15 +15,18 @@ import (
 
 func Run(r *template.Renderer) {
 	m := mux.NewRouter()
-	m.Use(handlers.RecoveryHandler(), middleware.NewRequestID)
+	m.Use(handlers.RecoveryHandler())
 
-	m.HandleFunc("/", index(r))
+	h := index(r)
+	h = middleware.NewRequestID(h)
+
+	m.Handle("/", h)
 
 	log.Fatal(http.ListenAndServe(":8080", handlers.LoggingHandler(os.Stdout, m)))
 }
 
-func index(renderer *template.Renderer) http.HandlerFunc {
-	return func(w http.ResponseWriter, req *http.Request) {
+func index(renderer *template.Renderer) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		ctx := req.Context()
 
 		data := map[string]interface{}{
@@ -38,5 +41,5 @@ func index(renderer *template.Renderer) http.HandlerFunc {
 		if err := renderer.Render(ctx, w, "/index", data); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
-	}
+	})
 }
