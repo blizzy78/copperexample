@@ -18,7 +18,7 @@ import (
 )
 
 func main() {
-	r := template.NewRenderer(loadTemplate,
+	r := template.NewRenderer(template.LoaderFunc(loadTemplate),
 		template.WithScopeData("safe", helpers.Safe),
 		template.WithScopeData("html", helpers.HTML),
 		template.WithScopeData("has", helpers.Has),
