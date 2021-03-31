@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path/filepath"
@@ -22,7 +21,8 @@ func main() {
 		template.WithScopeData("safe", helpers.Safe),
 		template.WithScopeData("html", helpers.HTML),
 		template.WithScopeData("has", helpers.Has),
-		template.WithScopeData("requestID", middleware.RequestIDFromContext))
+		template.WithScopeData("requestID", middleware.RequestIDFromContext),
+	)
 
 	// chiexample.Run(r)
 	// gorillaexample.Run(r)
@@ -30,8 +30,7 @@ func main() {
 	nethttpexample.Run(r)
 }
 
-func loadTemplate(name string) (io.Reader, error) {
-	path := fmt.Sprintf("templates%s.html", name)
-	path = filepath.FromSlash(path)
+func loadTemplate(name string) (io.ReadCloser, error) {
+	path := filepath.FromSlash("templates" + name + ".html")
 	return os.Open(path)
 }

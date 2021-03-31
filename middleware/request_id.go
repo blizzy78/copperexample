@@ -8,7 +8,7 @@ import (
 
 type requestIDContextKey string
 
-const requestIDKey requestIDContextKey = "requestID"
+const requestIDKey = requestIDContextKey("requestID")
 
 func NewRequestID(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -16,7 +16,8 @@ func NewRequestID(next http.Handler) http.Handler {
 		id := rand.Int()
 
 		// put ID into request's context
-		ctx := withRequestID(r.Context(), id)
+		ctx := r.Context()
+		ctx = withRequestID(ctx, id)
 		r = r.WithContext(ctx)
 
 		// call next handler
